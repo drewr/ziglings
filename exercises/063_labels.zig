@@ -104,7 +104,7 @@ pub fn main() void {
 
     // Look at each Food on the menu...
     var meal = food_loop: for (menu) |food| {
-
+        print("trying {s}\n", .{food.name});
         // Now look at each required ingredient for the Food...
         for (food.requires) |required, required_ingredient| {
 
@@ -128,8 +128,8 @@ pub fn main() void {
         // wanted for this Food.
         //
         // Please return this Food from the loop.
-        break;
-    };
+        break food;
+    } else menu[0];
     // ^ Oops! We forgot to return Mac & Cheese as the default
     // Food when the requested ingredients aren't found.
 
