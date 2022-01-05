@@ -166,6 +166,17 @@ pub fn main() void {
     e.paths = e_paths[0..];
     f.paths = f_paths[0..];
 
+    inline for (.{
+        a,
+        b,
+        c,
+        d,
+        e,
+        f,
+    }) |loc| {
+        loc.paths = 
+    }
+
     var notebook = HermitsNotebook{};
     var working_note = NotebookEntry{
         .place = start,
